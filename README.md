@@ -76,12 +76,12 @@ O arquivo `LIMPO_seuarquivo.csv` será baixado automaticamente, formatado no pad
 ## 🧠 Como funciona por dentro?
 
 ```
-[1] DETECTAR ──► Lê o arquivo e descobre o separador de colunas automaticamente
+[1] DETECTAR] ──► Lê o arquivo e descobre o separador de colunas automaticamente
 
-[2] ENTENDER ──► Envia apenas as 3 primeiras linhas para o Gemini (IA) e pergunta:
+[2] ENTENDER] ──► Envia apenas as 3 primeiras linhas para o Gemini (IA) e pergunta:
                   "O que é cada coluna? Data? Dinheiro? Número? Texto?"
 
-[3] LIMPAR   ──► Aplica as transformações corretas em cada coluna
+[3] LIMPAR]   ──► Aplica as transformações corretas em cada coluna
                   e salva no padrão Power BI Brasil (sep=';', decimal=',')
 ```
 
@@ -90,14 +90,11 @@ O arquivo `LIMPO_seuarquivo.csv` será baixado automaticamente, formatado no pad
 
 ---
 
-## 🔎 Verificações antes de usar o CSV gerado
+## ℹ️ Orientações de uso e privacidade
 
-Depois da limpeza, confira uma amostra do resultado antes de utilizá-lo em relatórios ou decisões:
+Antes de utilizar o CSV no Power BI, confira uma amostra de datas, valores monetários, unidades convertidas e campos vazios. Na importação, use `;` como delimitador e verifique a vírgula como separador decimal.
 
-- Compare a quantidade de linhas e colunas do arquivo original com a do CSV exportado e investigue diferenças inesperadas.
-- Confira manualmente algumas datas, valores monetários, unidades convertidas e células vazias, especialmente em colunas com formatos mistos.
-- Na importação para o Power BI, verifique se o delimitador de colunas é `;` (ponto e vírgula) e se os números usam vírgula como separador decimal.
-- Guarde o CSV original para auditoria. Como exemplos de linhas são enviados à API de IA, não processe dados pessoais ou confidenciais sem autorização adequada.
+Guarde o arquivo original para auditoria. Como o agente envia cabeçalhos e exemplos de linhas para a API de IA, evite processar dados pessoais ou confidenciais sem a devida autorização.
 
 ---
 
