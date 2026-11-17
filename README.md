@@ -76,17 +76,28 @@ O arquivo `LIMPO_seuarquivo.csv` será baixado automaticamente, formatado no pad
 ## 🧠 Como funciona por dentro?
 
 ```
-[1] DETECTAR] ──► Lê o arquivo e descobre o separador de colunas automaticamente
+[1] DETECTAR ──► Lê o arquivo e descobre o separador de colunas automaticamente
 
-[2] ENTENDER] ──► Envia apenas as 3 primeiras linhas para o Gemini (IA) e pergunta:
+[2] ENTENDER ──► Envia apenas as 3 primeiras linhas para o Gemini (IA) e pergunta:
                   "O que é cada coluna? Data? Dinheiro? Número? Texto?"
 
-[3] LIMPAR]   ──► Aplica as transformações corretas em cada coluna
+[3] LIMPAR   ──► Aplica as transformações corretas em cada coluna
                   e salva no padrão Power BI Brasil (sep=';', decimal=',')
 ```
 
 > 🔒 **Privacidade:** Apenas o cabeçalho e 3 linhas de amostra vão para a IA.
 > O restante dos seus dados é processado localmente dentro do Colab, sem sair da sua sessão.
+
+---
+
+## 🔎 Verificações antes de usar o CSV gerado
+
+Depois da limpeza, confira uma amostra do resultado antes de utilizá-lo em relatórios ou decisões:
+
+- Compare a quantidade de linhas e colunas do arquivo original com a do CSV exportado e investigue diferenças inesperadas.
+- Confira manualmente algumas datas, valores monetários, unidades convertidas e células vazias, especialmente em colunas com formatos mistos.
+- Na importação para o Power BI, verifique se o delimitador de colunas é `;` (ponto e vírgula) e se os números usam vírgula como separador decimal.
+- Guarde o CSV original para auditoria. Como exemplos de linhas são enviados à API de IA, não processe dados pessoais ou confidenciais sem autorização adequada.
 
 ---
 
